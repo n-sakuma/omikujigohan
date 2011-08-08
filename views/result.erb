@@ -1,0 +1,24 @@
+<form id="form1" name="form1" method="post" action="/result">
+  <h1><a href="http://omikujigohan.woopsdez.jp/"><img src="images/mainimages.gif" width="300" height="265" alt="おみくじごはん" /></a></h1>
+  <p><input name="submit" type="submit" value="もう一回おみくじする" /></p>
+  <p class="result">
+
+    <a href="http://gourmet.livedoor.com/search/restaurant/simple?local=&name=&menu=<%= @menu.pick_up %>&purpose=&x=0&y=0" target="_blank">
+      <span>
+        <%= @menu.to_vertical %>
+      </span>
+    </a>
+  </p>
+
+  <div id="Option">
+    <div id="Items">
+      <dl>
+        <dt>下のフォームにメニューを入れるとその中のメニューだけでおみくじができるゾ。</dt>
+        <% (0..9).each do |i| %>
+          <dd><input type="text" name="item0" id="item0" value="<%= params['item' + i.to_s] %>" /></dd>
+        <% end %>
+      </dl>
+    </div>
+    <p id="button"><img src="images/tab_option.gif" alt="候補を入れる" name="btn" width="41" height="132" /></p>
+  </div>
+</form>
