@@ -15,7 +15,7 @@
       <dl>
         <dt>下のフォームにメニューを入れるとその中のメニューだけでおみくじができるゾ。</dt>
         <% (0..9).each do |i| %>
-          <dd><input type="text" name="item0" id="item0" value="<%= params['item' + i.to_s] %>" /></dd>
+          <dd><input type="text" name="item<%= i %>" id="item<%= i %>" value="<%= params['item' + i.to_s] %>" /></dd>
         <% end %>
       </dl>
     </div>
